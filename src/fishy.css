@@ -200,20 +200,6 @@ li > a {
   color:transparent;
 }
 
-/* #fishButton{
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  position:absolute;
-  left:54.33%;
-  top:22.4%;
-  overflow: hidden;
-  z-index:3;
-} */
-
 .auto-type{
   min-height: 90px;
   white-space: nowrap;
@@ -224,21 +210,6 @@ li > a {
   font-size:70px;
   margin-top: 10px;
 }
-
-/* .enter{
-  margin: 0px auto;
-  background-color:transparent;
-  display:block;
-	padding: 0.75rem 1.25rem;
-	font-size: 0.875rem;
-	font-weight: 600;
-	letter-spacing: 0.06em;
-	text-transform: uppercase;
-	border-radius: 0.5rem;
-  border-color:#ffffff;
-	box-shadow: 2px 2px 6px rgba(72, 70, 70, 0.208);
-  color:rgb(255, 255, 255);
-} */
 
 .enter:hover {
 	opacity: 0.65;
@@ -422,52 +393,54 @@ li > a {
   justify-content: space-between;
   margin-left: 50px;
   margin-right: 50px;
-  /* align-items: center; */
-  display:none;
-
+  /* display:none; */
 }
 
 #projectBlock1 {
-  /* display:flex; */
   margin-top:220px;
-  width:100vh;
+  width:100%;
+  max-width: 100vh;
   height:44vh;
   background-color: rgb(10, 10, 10);
   color: whitesmoke;
   position: relative;
   border-radius: 20px;
-  
 }
 
 #projectBlock2 {
-  display:flex;
   left:45%;
   margin-top:80px;
-  width:100vh;
+  width:100%;
+  max-width: 100vh;
   height:42vh;
   background-color: rgb(10, 10, 10);
   color: whitesmoke;
   position: relative;
   border-radius: 20px;
 }
-#skills{
+
+
+#skills, #educationTitle {
   display:block;
   margin-left:40px;
   margin-bottom:20px;
   padding-top: 20px;
   font-size:35px;
 }
+
+
 .skillType{
-  padding-left: 65px;
+  white-space: nowrap;
+  padding-left: 40px;
   padding-right: 180px;
   width: auto;
   height:auto;
   background:transparent;
   border-color: transparent;
+  align-items: center;
   cursor:pointer;
   font-size:x-large;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-
 }
 
 .skillType:hover{
@@ -478,7 +451,7 @@ li > a {
   display:flex;
   justify-content:space-between;
   align-items: center;
-  background-color:gray;
+  background-color:rgb(99, 93, 93);
 }
 
 #skillDetail{
@@ -488,16 +461,8 @@ li > a {
 }
 
 #skillDetail > ul > li{
-  padding-bottom:20px;
+  padding-bottom:7px;
   font-size: 23px;
-}
-
-#education{
-  display:block;
-  margin-left:40px;
-  margin-bottom:20px;
-  padding-top: 20px;
-  font-size:35px;
 }
 
 #front-end-skill{
@@ -510,6 +475,55 @@ li > a {
   display: none;
   left:55.5%;
   position:absolute
+}
+
+#educationDetail{
+  width:auto;
+  height:55%;
+  padding-top:15px;
+  background-color:rgb(99, 93, 93);
+  font-size: 23px;
+  color:black;
+}
+
+#educationDetail > li{
+  padding-bottom: 20px;
+}
+
+
+
+@media screen and (max-width: 767px) {
+  #skillTypeGroup {
+    justify-content: space-between;
+  }
+
+  .skillType {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: large;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    margin-right: 170px;
+  }
+
+  #skillDetail {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    flex-direction: column;
+  }
+
+  #front-end-skill, #back-end-skill {
+    margin-right: 30px;
+  }
+
+  #skillDetail > ul > li {
+    font-size: 18px;
+  }
+
+  #projectBlock1, #projectBlock2 {
+    height: auto;
+  }
 }
 /* -----------------projects End------------------ */
 
