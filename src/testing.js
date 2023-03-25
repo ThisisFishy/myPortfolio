@@ -70,21 +70,23 @@ $(document).ready(function() {
     });
   });
 
-//   $("#front-end").click(function() {
-//     $("#front-end-skill").toggle().stop().slideDown().fadeIn();
-//   });
-
-//   $("#front-end").click(function() {
-//     var $skill = $("#front-end-skill");
-//     if ($skill.is(":visible")) {
-//       $skill.animate({ "marginTop": "-100%" }, "slow", function() {
-//         $skill.css("marginTop", "100%").hide();
-//       });
-//     } else {
-//       $skill.show().css("marginTop", "-100%").animate({ "marginTop": "0%" }, "slow");
-//     }
-//   });
+  $("#front-end").click(function() {
+    if ($("#front-end-skill").is(":visible")){
+        $("#front-end-skill").slideUp().fadeOut();
+    } else {
+        $("#front-end-skill").slideDown().fadeIn();
+    }    
+  });
 
   $("#back-end").click(function() {
-    $("#back-end-skill").fadeOut();
+    if ($("#back-end-skill").is(":visible")){
+        $("#back-end-skill").slideUp().fadeOut();
+    } else {
+        $("#back-end-skill").slideDown().fadeIn();
+    }    
+  });
+
+
+  $("#back-end").click(function() {
+    
   })

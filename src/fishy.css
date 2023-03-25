@@ -362,10 +362,17 @@ li > a {
   background-color: #333;
   border: none;
   cursor: pointer;
-  margin:  35px;
   overflow: hidden;
   z-index:3;
 } 
+
+#page1btn{
+  margin-right: 20px;
+}
+
+#page2btn{
+  margin-left: 20px;
+}
 
 #page1btn:disabled {
   opacity: 1;
@@ -494,11 +501,13 @@ li > a {
 }
 
 #front-end-skill{
+  display:none;
   margin-left:30px;
   margin-right:150px;
 }
 
 #back-end-skill{
+  display: none;
   left:55.5%;
   position:absolute
 }
