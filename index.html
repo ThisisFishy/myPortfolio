@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profolio</title>
     <link rel="stylesheet" href="src\fishy.css"/>
+    <script src="https://kit.fontawesome.com/e964fb6eb2.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -13,7 +14,7 @@
     <header id="header">
        <nav id="navbar"> 
         <ul>
-          <img src="fishLogo.png" class="logo">
+          <img src="images\fishLogo.png" class="logo">
           <li><a href="#introduction" >Home</a></li>
           <li><a href="#projects">About</a></li>
           <li><a href="#contacts">Contacts</a></li>
@@ -32,25 +33,27 @@
         <div class="hifish7"></div>
         <div class="hifish8"></div>
       </div>
+      <!-- <img src="bg_BaW1.png" id="bg_curve"> -->
       <a><span class="auto-type"></span></a>
       <!-- <button class="enter btn btn-default target" type="button" id="enter">Welcome</button> -->
     </section>
 
     <section id="introduction">
+        <img src="images\bg_BaW3.png" id="bg_BaW">
         <button id="page1btn" type="button">
             <span class="arrowleft"></span>
         </button>
         <div class="intro1">
-          <h id="intro_text1">Hi, I'm Thomas</h>
-          <a><img src="Dogpicture.jpg" id="pic1"></a>
+          <h id="intro_text1">I am Thomas</h>
+          <a><img src="images\dogdogdog.png" id="pic1"></a>
         </div>
         <div class="intro2">
           <h id="intro_text2">This is my Dog BB</h>
-          <a><img src="Dogpicture.jpg" id="pic2"></a>
+          <a><img src="images\Dogpicture.jpg" id="pic2"></a>
         </div>
         <div class="intro3">
           <h id="intro_text3">something</h>
-          <a><img src="Dogpicture.jpg" id="pic3"></a>
+          <a><img src="images\Dogpicture.jpg" id="pic3"></a>
         </div>
         <button id="page2btn" type="button">
           <span class="arrowright"></span>
@@ -61,25 +64,30 @@
     <section id="projects">
 
       <div id="projectBlock1">
-        <h class="project-title" id="skills">Skill Set</h>
-        <div id="skillTypeGroup">
-          <button type="button" class="skillType" id="front-end">三 Front-End </button>
-          <button type="button" class="skillType" id="back-end">三 Back-End </button>
+        <div id="centerTitle">
+          <h class="project-title heading-with-lines" id="skillsTitle"><span>Skill Set</span></h>
         </div>
-        
-        <div id="skillDetail">
-          <ul id="front-end-skill">
-            <li id="aaa">JavaScript ( React , JQuery )</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Bootstrap</li>
-          </ul>
-          <ul id="back-end-skill">
-            <li>JavaScript</li>
-            <li>TypeJS</li>
-            <li>MySQL</li>
-            <li>C++</li>
-          </ul>
+        <div id="boxOrganise">
+          <div id="frontEndGroup" class="skillGroup">
+            <button type="button" class="skillType" id="front-end"> Front-End <i class="fa-regular fa-object-ungroup"></i></button> 
+            <ul id="front-end-skill" class="skillBar">
+              <li>HTML <i class="fa-brands fa-html5 logo"></i></li>
+              <li>CSS <i class="fa-brands fa-css3-alt"></i></li>
+              <li>React <i class="fa-brands fa-react"></i></li>
+              <li>JQuery <img src="images\jqueryLogo.png" id="jquery-logo" /></li>
+              <li>Bootstrap <i class="fa-brands fa-bootstrap"></i></li>
+            </ul>
+          </div>
+
+          <div id="backEndGroup" class="skillGroup">
+            <button type="button" class="skillType" id="back-end"> Back-End <i class="fa-sharp fa-solid fa-code logo"></i></button>
+            <ul id="back-end-skill" class="skillBar">
+              <li>JavaScript <i class="fa-brands fa-square-js"></i></li>
+              <li>MySQL <img src="images\MySQL-logo.png" id="MySQL-logo" /></li>
+              <li>TypeJS <i class="fa-brands fa-js"></i></li>
+              <li>C++ <i class="fa-solid fa-c"></i></li>
+            </ul>
+          </div>
         </div>
       </div>
 
