@@ -248,6 +248,30 @@ li > a {
   height: fit-content;
 }
 
+#CV_btn{
+  width:fit-content;
+  height:fit-content;
+  white-space: nowrap;
+}
+
+.download-button {
+  /* display: inline-block; */
+  white-space: nowrap;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.download-button:hover {
+  background-color: #0056b3;
+}
+
 #pic1, #pic2, #pic3{
   /* display: flex; */
   width: 350px;
@@ -429,22 +453,20 @@ li > a {
 }
 
 #projectBlock2 {
-  left:45%;
-  margin-top:80px;
+  margin-top:300px;
   width:100%;
-  max-width: 100vh;
-  height:47vh;
-  background-color: rgb(10, 10, 10);
+  /* max-width: 100vh; */
+  height:450px;
+  /* background-color: blue; */
   color: whitesmoke;
   position: relative;
-  border-radius: 25px;
 }
 
 #centerTitle {
   text-align: center;
 }
 
-#skillsTitle , #educationTitle{
+#skillsTitle , #projectTitle{
   justify-content: center;
   align-items: center;
   /* display:block; */
@@ -490,17 +512,17 @@ li > a {
   margin-left: 10px; 
 }
 
-#boxOrganise{
+#block1BoxOrganise{
   justify-content: space-between;
   display:flex;
   margin-left: 30px;
   margin-right: 30px;
 }
 
-
 .skillType{
   width: auto;
   height:auto;
+  margin-top:5px;
   color:whitesmoke;
   background:transparent;
   border-color: transparent;
@@ -552,21 +574,95 @@ li > a {
   vertical-align: middle;
 }
 
-#educationDetail{
-  width:auto;
-  height:55%;
-  padding-top:15px;
-  background-color:rgb(99, 93, 93);
-  font-size: 23px;
-  color:black;
+#block2BoxOrganise{
+  justify-content:space-evenly;
+  display:flex;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
-#educationDetail > li{
-  padding-bottom: 20px;
+#projectImg1{
+  width:220px;
+  height:200px;
+  border-radius:10px 10px 0px 0px;
 }
 
+#projectImg2{
+  width:220px;
+  height:200px;
+  border-radius:10px 10px 0px 0px;
+}
 
+.projectName{
+  font-size: large;
+  font-weight: 700;
+  display:block;
+  margin-left:10px;
+}
 
+.layer{
+  position:absolute;
+  width:100%;
+  /* height:100%; */
+  left:0;
+  bottom:-100%;
+  overflow: hidden;
+  top:0;
+  background: linear-gradient(180deg, rgba(49, 38, 38, 0.8) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0.95) 100%);
+  border-radius: 10px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  transition: bottom 0.3s;
+  opacity: 0;
+}
+
+.projectDetail:hover .layer {
+  opacity: 1;
+  bottom: 0;
+}
+
+.layer > a> i{
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: whitesmoke;
+}
+
+.logoFlex{
+  display: flex;
+  flex-direction: column;
+}
+
+.projectDetail{
+  position: relative;
+  overflow:hidden;
+  width:220px;
+  height:290px;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.projectDetail > p{
+  margin-left:10px;
+  font-size:15px;
+  /* background-color: blue; */
+
+}
+
+.projectDetail > p > i{
+  font-size:25px;
+  margin-left: 10px;
+  vertical-align:middle;
+}
+
+#jquery-logo2{
+  width:25px;
+  height:25px;
+  vertical-align:middle;
+  margin-left: 10px;
+}
 
 @media screen and (max-width: 767px) {
   #skillTypeGroup {
