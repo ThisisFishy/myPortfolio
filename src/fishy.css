@@ -704,11 +704,45 @@ li > a {
 /* -----------------projects End------------------ */
 
 #contacts {
-  display:none;
+  display:flex;
   width:200px;
   height:200px;
-  background-color: white;
+  background-color: transparent;
+  color:white;
 }
+
+#myInfo{
+  width:auto;
+  height:300px;
+  background-color: green;
+}
+
+#myInfo > h{
+  margin-left:20px;
+  font-size: 40px;
+  font-weight: 600;
+  display: block;
+}
+
+#myInfo > p{
+  margin-left:20px;
+  font-size: 25px;
+}
+
+#myInfo > .logoGroup > a{
+  font-size: 35px;
+  margin-left:20px;
+}
+
+#form_name, #form_email, #form_message{
+  border-radius: 5px;
+  width:400px;
+}
+
+#form_message{
+  height:100px;
+}
+
 
  /* @media (max-width: 30.625em) {
   .projects-section {
