@@ -241,6 +241,11 @@ li > a {
 
 }
 
+#textandbutton > p{
+  font-size:26px;
+  color:blue;
+}
+
 #introduction > #bg_BaW{
   position: absolute;
   z-index:-1;
@@ -578,6 +583,12 @@ li > a {
 }
 
 #MySQL-logo {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+#cppLogo{
   width: 25px;
   height: 25px;
   vertical-align: middle;

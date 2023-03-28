@@ -70,6 +70,25 @@ $(document).ready(function() {
     });
   });
 
+  $(window).scroll(function() {
+    var popupVisible = false;
+    var scroll = $(window).scrollTop();
+    var contentHeight = $('#projects').height();
+    var popupHeight = $('#front-end-skill').height();
+    var triggerPoint = contentHeight - popupHeight - 200; // change this value to adjust the trigger point
+  
+    if (scroll > triggerPoint && !popupVisible) {
+        $("#front-end-skill, #back-end-skill, #other-skill").slideDown().fadeIn();
+        popupVisible = true;
+    } else if(scroll <= triggerPoint && popupVisible){
+        $("#front-end-skill, #back-end-skill, #other-skill").slideUp().fadeOut();
+        popupVisible = false;
+    }
+  });
+
+
+
+
   $("#front-end").click(function() {
     if ($("#front-end-skill").is(":visible")){
         $("#front-end-skill").slideUp().fadeOut();
