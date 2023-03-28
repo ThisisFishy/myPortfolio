@@ -155,7 +155,7 @@ li > a {
 .hifish7{
   margin:0;
   left:188px;
-  bottom:302px;
+  bottom:310px;
   transform: rotate(-70deg);
   transition: transform 0.3s ease-in-out;
 }
@@ -163,7 +163,7 @@ li > a {
 .hifish8{
   margin:0;
   left:230px;
-  bottom:390px;
+  bottom:398px;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -716,40 +716,66 @@ li > a {
   width:200px;
   height:200px;
   background-color: transparent;
-  color:white;
+  color:whitesmoke;
 }
 
 #myInfo{
   width:auto;
   height:300px;
-  background-color: green;
+  /* background-color: green; */
 }
 
 #myInfo > h{
-  margin-left:20px;
-  font-size: 40px;
+  margin-left:40px;
+  margin-bottom:40px;
+  font-size: 50px;
   font-weight: 600;
   display: block;
 }
 
 #myInfo > p{
-  margin-left:20px;
+  white-space: nowrap;
+  margin-left:50px;
+  margin-bottom:20px;
   font-size: 25px;
 }
 
+.logoGroup{
+  margin-left:50px;
+  margin-top:60px;
+}
+
+
+
 #myInfo > .logoGroup > a{
   font-size: 35px;
-  margin-left:20px;
+  margin-left:35px;
+}
+
+#form{
+  margin-left:300px;
 }
 
 #form_name, #form_email, #form_message{
   border-radius: 5px;
-  width:400px;
+  width:550px;
+  height: 30px;
+  margin-bottom:10px;
+  background-color:gray;
+}
+
+::placeholder{
+  color: black;
+}
+
+#form_name{
+  margin-top:30px;
 }
 
 #form_message{
   height:100px;
 }
+
 
 
  /* @media (max-width: 30.625em) {
