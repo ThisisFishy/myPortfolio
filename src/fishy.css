@@ -513,10 +513,18 @@ li > a {
 }
 
 #block1BoxOrganise{
-  justify-content: space-between;
+  justify-content: space-evenly;
   display:flex;
   margin-left: 30px;
   margin-right: 30px;
+}
+
+#frontEndGroup{
+  margin-right:20px;
+}
+
+#backEndGroup{
+  margin-right:20px;
 }
 
 .skillType{

@@ -87,6 +87,10 @@ $(document).ready(function() {
   });
 
 
-  $("#back-end").click(function() {
-    
+  $("#others").click(function() {
+    if ($("#other-skill").is(":visible")){
+        $("#other-skill").slideUp().fadeOut();
+    } else {
+        $("#other-skill").slideDown().fadeIn();
+    }    
   })
