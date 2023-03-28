@@ -36,7 +36,7 @@ $(document).ready(function() {
                     width: '100%',
                     opacity: 0.9
                 }, 1000);
-                $(" #projects, #contacts").fadeIn();
+                $(" #projects, #contacts, #myInfo").fadeIn();
                 
             })
         })
