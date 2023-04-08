@@ -1,7 +1,8 @@
-    var typed = new Typed(".auto-type", {
-    strings: ["Welcome", "Try to hover that fish", "press the logo to visit"],
-    typeSpeed: 90,
-    backSpeed: 70,
+    var typed = new Typed(".auto-typed", {
+    strings: ["Thomas", "Fishy"],
+    typeSpeed: 300,
+    backSpeed: 100,
     loop: true
 })
+
 

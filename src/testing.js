@@ -26,17 +26,24 @@ const countPage = () =>{
         
     }
 }
+
+$(window).on('beforeunload', function() {
+    $('html, body').scrollTop(0);
+  });
+
 $(document).ready(function() {
     $("#welcome-section").click(function() {
         console.log("here");
         countPage();
         $(".hifish, .enter, .auto-type").fadeOut(function() {
             $("#navbar").fadeIn(function(){
-                $('#introduction').css('display', 'flex').show().animate({
-                    width: '100%',
-                    opacity: 0.9
-                }, 1000);
+                $('#introduction')
+                    .css('display', 'flex')
+                    .css('width', '0')
+                    .animate({width: '100%'}, 1000)
+                    .fadeIn();
                 $(" #projects, #contacts, #myInfo").fadeIn();
+                $("#contacts").css("display", "flex");
                 
             })
         })
@@ -45,25 +52,47 @@ $(document).ready(function() {
     $("#page1btn").click(function() {
         $("#page1btn, #page2btn").fadeOut();
         $(".intro" + pageNo).css('transform', 'translateX(-20px)').fadeOut();
+        $("#bg").attr("src", "images/designedpropic"+ pageNo +".png").fadeOut();
         $(this).prop('disabled',true);
          pageNo -= 1;
          setTimeout(function() {
-            $(".intro" + pageNo).fadeIn().css('display', 'flex').show();
-            $("#page1btn, #page2btn").fadeIn().css('cursor', 'not-allowed');
+            $(".intro" + pageNo)
+                .fadeIn()
+                .css('display', 'flex')
+                .show();
+            $("#page1btn, #page2btn")
+                .fadeIn()
+                .css('cursor', 'not-allowed');
+            $("#bg")
+                .attr("src", "images/designedpropic"+ pageNo +".png")
+                .fadeIn();
             countPage();
-        }, 800);
+        }, 1000);
         $(".intro" + (pageNo + 2)).css('transform', 'translateX(20px)') //little bug when cycle 1 is fine, but from cycle 2 start bugging
     });
 
 
     $("#page2btn").click(function() {
         $("#page1btn, #page2btn").fadeOut();
-        $(".intro" + pageNo).css('transform', 'translateX(20px)').fadeOut();
+        $(".intro" + pageNo)
+            .css('transform', 'translateX(20px)')
+            .fadeOut();
+        $("#bg")
+            .attr("src", "images/designedpropic"+ pageNo +".png")
+            .fadeOut();
         $(this).prop('disabled',true);
          pageNo += 1;
          setTimeout(function() {
-            $(".intro" + pageNo).fadeIn().css('display', 'flex').show();
-            $("#page1btn, #page2btn").fadeIn().css('cursor', 'not-allowed');
+            $(".intro" + pageNo)
+                .fadeIn()
+                .css('display', 'flex')
+                .show();
+            $("#page1btn, #page2btn")
+                .fadeIn()
+                .css('cursor', 'not-allowed');
+            $("#bg")
+                .attr("src", "images/designedpropic"+ pageNo +".png")
+                .fadeIn();
             countPage();
         }, 800);
         $(".intro" + (pageNo - 2)).css('transform', 'translateX(-20px)') //little bug when cycle 1 is fine, but from cycle 2 start bugging

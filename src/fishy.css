@@ -13,9 +13,7 @@ body{
   min-height: 800px; */
   height:100vh;
   padding-top: 100px;
-  /* background-image: url("bg_BaW1.png"); */
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0.95) 100%);
-
+  background: linear-gradient(180deg, rgba(28, 24, 24, 0.8) 0%, rgba(16, 15, 15, 0.9) 50%, rgba(28, 24, 24, 0.8) 100%);
 }
 html{
   min-width:800px;
@@ -211,7 +209,7 @@ li > a {
   color:transparent;
 }
 
-.auto-type{
+.auto-typed{
   min-height: 90px;
   white-space: nowrap;
   color:whitesmoke;
@@ -219,7 +217,8 @@ li > a {
   align-items: center; 
   justify-content: center;
   font-size:70px;
-  margin-top: 10px;
+  margin-top: 5px;
+  z-index: 3;
 }
 
 .enter:hover {
@@ -229,28 +228,31 @@ li > a {
 /* -----------------Welcome button End------------------ */
 /* -----------------intro start------------------ */
 #introduction{
-  width:0;
-  height:80%;
+  margin-top:100px;
+  width:100%;
+  height:50%;
   border-radius: 20px;
   Display:none;
   justify-content: center;
   align-items: center;
-  /* background: rgba(26, 12, 12, 0.8); */
   overflow:hidden;
-  /* background-image: url("bg_BaW1"); */
+}
 
+#textandbutton{
+  padding-bottom: 40px;
 }
 
 #textandbutton > p{
   font-size:26px;
-  color:blue;
+  color:rgb(144, 144, 144);
 }
 
-#introduction > #bg_BaW{
+#introduction > #bg{
   position: absolute;
-  z-index:-1;
-  width: fit-content;
-  height: fit-content;
+  z-index:-2;
+  /* width: 95%; */
+  /* height: 100%; */
+  overflow:hidden;
 }
 
 #CV_btn{
@@ -260,17 +262,15 @@ li > a {
 }
 
 #download-button {
-  margin-top: 20px;
+  /* margin-top: 10px; */
   white-space: nowrap;
   padding: 10px 20px;
-  background-color: gray;
+  background-color: white;
   color: black;
   text-decoration: none;
   font-size: 16px;
-  /* border: none; */
   cursor: pointer;
   border-radius: 4px;
-  transition: background-color 0.3s;
 }
 
 #download-button:hover {
@@ -283,22 +283,23 @@ li > a {
   height: 450px;
   border-radius: 10%;
   overflow: hidden; 
-  margin-top: 50px;
+  margin-top: 100px;
   margin-left:50px;
   overflow:hidden;
 }
 
 .intro1{
-  /* background-color: white; */
+  padding-right: 580px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items:center;
   overflow:hidden;
   transition: transform 0.5s ease-out;
+  
 }
 
 .intro2{
-  /* background-color: blue; */
+  padding-right: 470px;
   display: none;
   justify-content: center;
   align-items: center;
@@ -307,7 +308,6 @@ li > a {
 }
 
 .intro3{
-  /* background-color: yellow; */
   display: none;
   justify-content: center;
   align-items: center;
@@ -331,24 +331,24 @@ li > a {
 
 
 #intro_text1{
+  width:500px;
   white-space: nowrap;
-  color:rgb(195, 6, 6);
+  color: rgb(144, 144, 144);
   display: flex; 
   align-items: center; 
-  justify-content: center;
+  justify-content:left;
   font-size:75px;
   margin-top: 10px;
   margin-right: 290px;
   margin-bottom: 50px;
   left:20px;
   transition: transform 0.5s ease-out;
-  /* font-size: x-large; */
   font-weight: 1000;
 }
 
 #intro_text2{
+  color:rgb(195, 6, 6);
   white-space: nowrap;
-  /* color:whitesmoke; */
   display: flex; 
   align-items: center; 
   justify-content: center;
@@ -361,17 +361,19 @@ li > a {
 }
 
 #intro_text3{
+  width:500px;
   white-space: nowrap;
-  /* color:whitesmoke; */
+  color: rgb(144, 144, 144);
+  /* background-color: yellow; */
+  margin-right: 800px;
   display: flex; 
-  align-items: center; 
-  justify-content: center;
-  font-size:70px;
-  margin-top: 10px;
-  margin-right: 290px;
-  left:20px;
+  align-items: center;
+  justify-content:left;
+  font-size:55px;
+  margin-top: 60px;
+  margin-bottom: 50px;
   transition: transform 0.5s ease-out;
-  /* display:none; */
+  font-weight: 1000;
 }
 
 
@@ -443,6 +445,7 @@ li > a {
 /* -----------------projects Start------------------ */
 #projects{
   /* justify-content: space-between; */
+  padding-top: 100px;
   margin-left: 25px;
   margin-right: 25px;
   display:none;
@@ -459,7 +462,7 @@ li > a {
 }
 
 #projectBlock2 {
-  margin-top:300px;
+  margin-top:200px;
   width:100%;
   /* max-width: 100vh; */
   height:450px;
@@ -724,12 +727,13 @@ li > a {
 /* -----------------projects End------------------ */
 
 #contacts {
-  display:flex;
-  height:300px;
+  display:none;
+  height:200px;
   width:100%;
   background-color: transparent;
   justify-content: center;
   align-items: center;
+  background-color: black;
 }
 
 #myInfo{
