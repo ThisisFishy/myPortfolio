@@ -68,7 +68,7 @@ $(document).ready(function() {
                 .fadeIn();
             countPage();
         }, 1000);
-        $(".intro" + (pageNo + 2)).css('transform', 'translateX(20px)') //little bug when cycle 1 is fine, but from cycle 2 start bugging
+        $(".intro" + (pageNo + 2)).css('transform', 'translateX(20px)') 
     });
 
 
@@ -95,7 +95,7 @@ $(document).ready(function() {
                 .fadeIn();
             countPage();
         }, 800);
-        $(".intro" + (pageNo - 2)).css('transform', 'translateX(-20px)') //little bug when cycle 1 is fine, but from cycle 2 start bugging
+        $(".intro" + (pageNo - 2)).css('transform', 'translateX(-20px)')
     });
   });
 
@@ -104,10 +104,22 @@ $(document).ready(function() {
     var scroll = $(window).scrollTop();
     var contentHeight = $('#projects').height();
     var popupHeight = $('#front-end-skill').height();
-    var triggerPoint = contentHeight - popupHeight - 400; // change this value to adjust the trigger point
+    var triggerPoint = contentHeight - popupHeight - 400;
   
-    if (scroll > triggerPoint) {
+    if (scroll > triggerPoint && $(window).width() > 450) {
         $("#front-end-skill, #back-end-skill, #other-skill").slideDown().fadeIn();
+    }
+
+    if (scroll > 200 && $(window).width() < 450) {
+        $("#front-end-skill").slideDown().fadeIn();
+    }
+
+    if (scroll > 500 && $(window).width() < 450) {
+        $("#back-end-skill").slideDown().fadeIn();
+    }
+
+    if (scroll > 750 && $(window).width() < 450) {
+        $("#other-skill").slideDown().fadeIn();
     }
   });
   

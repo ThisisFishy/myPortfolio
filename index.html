@@ -3,9 +3,11 @@
 
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Profolio</title>
     <link rel="stylesheet" href="src\fishy.css"/>
+    <link rel="icon" href="images\fishwebLogo.png">
     <script src="https://kit.fontawesome.com/e964fb6eb2.js" crossorigin="anonymous"></script>
   </head>
 
@@ -34,31 +36,29 @@
         <div class="hifish7"></div>
         <div class="hifish8"></div>
       </div>
-      <!-- <img src="bg_BaW1.png" id="bg_curve"> -->
-      <!-- <a><span class="auto-type"></span></a> -->
-      <!-- <button class="enter btn btn-default target" type="button" id="enter">Welcome</button> -->
     </section>
 
     <section id="introduction">
         <img src="images\designedpropic1.png" id="bg">
+        <img src="images\bgformobile.jpg" id="bgformobile">
         <button id="page1btn" type="button">
             <span class="arrowleft"></span>
         </button>
         <div class="intro1">
           <div id="textandbutton">
-            <h id="intro_text1">I am&nbsp;<span class="auto-typed"></span> </h>  <!--need a space, irmb its like %.. something-->
+            <h id="intro_text1">I am&nbsp;<span class="auto-typed"></span> </h> 
             <p>A motivated self-taught front-end developer </p>
             <a href="images\ThomasYu's_Resume.pdf" download id="download-button">Download My CV</a>
           </div>
-          <!-- <a><img src="images\propic.jpg" id="pic1"></a> -->
         </div>
         <div class="intro2">
-          <h id="intro_text2">something</h>
-          <!-- <a><img src="images\designedpropic2.png" id="pic2"></a> -->
-        </div>
+          <div id="intro2organise">
+            <h id="intro_text2header">Fun Fact</h>
+            <p id="intro_text2">I went to Thailand just for some fine picture for my website</p>
+          </div>
+          </div>
         <div class="intro3">
           <h id="intro_text3">This is my Dog BB</h>
-          <!-- <a><img src="images\Dogpicture.jpg" id="pic3"></a> -->
         </div>
         <button id="page2btn" type="button">
           <span class="arrowright"></span>
@@ -74,7 +74,7 @@
         </div>
         <div id="block1BoxOrganise">
           <div id="frontEndGroup" class="skillGroup">
-            <button type="button" class="skillType" id="front-end"> Front-End <i class="fa-regular fa-object-ungroup"></i></button> 
+            <button type="button" class="skillType" id="front-end" disabled> Front-End <i class="fa-regular fa-object-ungroup"></i></button> 
             <ul id="front-end-skill" class="skillBar">
               <li>HTML <i class="fa-brands fa-html5 logo"></i></li>
               <li>CSS <i class="fa-brands fa-css3-alt"></i></li>
@@ -84,8 +84,8 @@
             </ul>
           </div>
 
-          <div id="backEndGroup" class="skillGroup">  <!--can add a scroll listener instead of pressing button -->
-            <button type="button" class="skillType" id="back-end"> Back-End <i class="fa-sharp fa-solid fa-code logo"></i></button>
+          <div id="backEndGroup" class="skillGroup">
+            <button type="button" class="skillType" id="back-end" disabled> Back-End <i class="fa-sharp fa-solid fa-code logo"></i></button>
             <ul id="back-end-skill" class="skillBar">
               <li>JavaScript <i class="fa-brands fa-square-js"></i></li>
               <li>MySQL <img src="images\MySQL-logo.png" id="MySQL-logo" /></li>
@@ -95,7 +95,7 @@
           </div>
 
           <div id="otherGroup" class="skillGroup">
-            <button type="button" class="skillType" id="others"> Others <i class="fa-sharp fa-solid fa-code logo"></i></button>
+            <button type="button" class="skillType" id="others" disabled> Others <i class="fa-sharp fa-solid fa-code logo"></i></button>
             <ul id="other-skill" class="skillBar">
               <li>Git <i class="fa-brands fa-git-alt"></i></li>
               <li>Fork <i class="fa-solid fa-code-fork"></i></li>
@@ -126,7 +126,7 @@
             <div class="layer">
               <a href="http://www.google.com" target="_blank"><i class="fa-brands fa-github logoFlex"></i></a>
               <a href="http://www.google.com" target="_blank"><i class="fa-solid fa-link logoFlex"></i></a>
-              <p>An internal use of database for gas company</p>
+              <p>An internal use of database for a small company</p>
             </div>
             <a class="projectName">CRUD App</a>
             <p>Skill used: <i class="fa-brands fa-html5 logo"></i> <i class="fa-brands fa-css3-alt"></i> <i class="fa-brands fa-react"></i></p>
