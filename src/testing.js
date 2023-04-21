@@ -110,15 +110,15 @@ $(document).ready(function() {
         $("#front-end-skill, #back-end-skill, #other-skill").slideDown().fadeIn();
     }
 
-    if (scroll > 200 && $(window).width() < 450) {
+    if (scroll > 200 && $(window).width() < 500) {
         $("#front-end-skill").slideDown().fadeIn();
     }
 
-    if (scroll > 500 && $(window).width() < 450) {
+    if (scroll > 500 && $(window).width() < 500) {
         $("#back-end-skill").slideDown().fadeIn();
     }
 
-    if (scroll > 750 && $(window).width() < 450) {
+    if (scroll > 750 && $(window).width() < 500) {
         $("#other-skill").slideDown().fadeIn();
     }
   });
