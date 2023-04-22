@@ -227,15 +227,22 @@ li > a {
 
 /* -----------------Welcome button End------------------ */
 /* -----------------intro start------------------ */
-#introduction{
-  margin-top:100px;
+#hiddenwall{
   width:100%;
-  height:50%;
+  height:100%;
+}
+
+#introduction{
+  width:100%;
+  height:100%;
   border-radius: 20px;
   Display:none;
   justify-content: center;
   align-items: center;
   overflow:hidden;
+  background-image: url("/images/designedpropic1.png");
+  background-size:cover;
+  background-position: center;
 }
 
 #textandbutton{
@@ -255,7 +262,7 @@ li > a {
   overflow:hidden;
 }
 
-#bgformobile{
+#bgformobile, #mobileIntroOrganise{
   display:none;
 }
 
@@ -294,9 +301,10 @@ li > a {
 
 .intro1{
   padding-right: 580px;
+  padding-left:10px;
   display: flex;
-  justify-content: center;
-  align-items:center;
+  justify-content: start;
+  align-items:start;
   overflow:hidden;
   transition: transform 0.5s ease-out;
   
@@ -305,16 +313,16 @@ li > a {
 .intro2{
   padding-right: 470px;
   display: none;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items:start;
   overflow:hidden;
   transition: transform 0.5s ease-out;
 }
 
 .intro3{
   display: none;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items:start;
   overflow:hidden;
   transition: transform 0.5s ease-out;
 }
@@ -352,10 +360,10 @@ li > a {
   white-space:normal;
   display: block;
   width:600px;
-  color: rgb(144, 144, 144);
+  color: #b9b9b9;
   align-items: center; 
   justify-content: center;
-  font-size:30px;
+  font-size:15px;
   margin-top: 10px;
   margin-right: 200px;
   left:10px;
@@ -465,14 +473,13 @@ li > a {
 /* -----------------intro End------------------ */
 /* -----------------projects Start------------------ */
 #projects{
-  padding-top: 100px;
   margin-left: 25px;
   margin-right: 25px;
   display:none;
 }
 
 #projectBlock1 {
-  margin-top:300px;
+  margin-top:150px;
   width:100%;
   /* max-width: 100vh; */
   height:450px;
@@ -737,9 +744,9 @@ li > a {
 @media only screen and (max-width: 450px) {
   body{
     height:auto;
-    width:450px;
+    width:100%;
     max-width:450px;
-    min-width:400px;
+    /* min-width:400px; */
     padding:0;
     margin: 0;
   }
@@ -752,7 +759,6 @@ li > a {
     display:flex;
     justify-content:center;
     align-items: center;
-
   }
 
   #navbar > ul > li{
@@ -765,27 +771,32 @@ li > a {
 
   #introduction{
     display:flex;
-    background-color: rgba(17, 10, 10, 0.656);
+    margin-top:100px;
+    padding-top:100px;
+    padding-bottom:100px;
+    background-image: url("/images/bgfortesting.png");
+    background-size:cover;
+    background-position: center;
     border-radius:5px;
     margin-bottom:0px;
     padding-bottom:0px;
   }
 
-  #bg, #page1btn, #page2btn, #intro2, #intro3{
+  #bg, #page1btn, #page2btn, .intro1, .intro2, .intro3{
     display:none;
   }
 
-  .intro1{
-    padding-left: 580px;
-    width:500px;
+  #mobileIntroOrganise{
+    display: flex;
+    width:100%;
+    margin-left:15px;
   }
 
   #bgformobile{
-    padding-left:92px;
     width:350px;
     height:400px;
     display:flex;
-    position:absolute;
+    position:absolute ;
     z-index:-1;
   }  
 
@@ -801,19 +812,28 @@ li > a {
     font-size: 40px;
   }
 
-  #textandbutton > h > .auto-typed{
+  #textandbutton > h > .auto-typed2{
     font-size: 40px;
     align-items:safe;
     margin-bottom:5px;
-    z-index:1;
+    min-height: 90px;
+    white-space: nowrap;
+    color:white;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin-top: 5px;
+    z-index: 1;
+
   }
 
-  #textandbutton > p{
+  #mobileIntroOrganise > #textandbutton > p{
     margin-top: 0px;
     font-size: 20px;
+    color:white;
   }
 
-  #textandbutton > a{
+  #mobileIntroOrganise > #textandbutton > a{
     size: 10px;
   }
 
@@ -836,9 +856,11 @@ li > a {
 
   .skillGroup{
     margin-top: 20px;
-    margin-left:10px;
+    /* margin-left:10px; */
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(17, 10, 10, 0.656);
     border-radius: 5px;
     width: 100%;
@@ -849,6 +871,8 @@ li > a {
     width: 100%;
     height:auto;
     margin-top:5px;
+    justify-content: center;
+    align-items: center;
     color:whitesmoke;
     background:transparent;
     border-color: transparent;
@@ -863,8 +887,18 @@ li > a {
   }
 
   #centerTitle {
+    justify-content: center;
     text-align: center;
-    margin-left:36px;
+  }
+
+  .heading-with-lines::before,
+  .heading-with-lines::after {
+    content: '';
+    position: absolute;
+    top: 60%;
+    width: 30%;
+    height: 2px; 
+    background-color: white;
   }
 
   #projectBlock1, #projectBlock2{
@@ -880,26 +914,28 @@ li > a {
 
   #skillsTitle , #projectTitle{
     margin-bottom:15px;
+    margin-left:20px;
     padding-top: 15px;
     font-size:50px;
     font-weight:700;
   }
 
   #block1BoxOrganise, #block2BoxOrganise{
-    display:block;
-    position: relative;
+    display:flex;
+    flex-direction: column;
     margin:0px;
+    margin-left:20px;
     justify-content: center;
     align-items: center;
   }
 
   #block2BoxOrganise{
-    margin-top:60px;
+    margin-top:10px;
   }
 
   .projectDetail{
     margin-top:60px;
-    margin-left:120px;
+    /* margin-left:120px; */
   }
 
   #contacts{

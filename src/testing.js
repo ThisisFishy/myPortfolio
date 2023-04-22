@@ -50,12 +50,14 @@ $(document).ready(function() {
     })
 
     $("#page1btn").click(function() {
+        $(this).prop('disabled', true);
         $("#page1btn, #page2btn").fadeOut();
         $(".intro" + pageNo).css('transform', 'translateX(-20px)').fadeOut();
-        $("#bg").attr("src", "images/designedpropic"+ pageNo +".png").fadeOut();
-        $(this).prop('disabled',true);
-         pageNo -= 1;
-         setTimeout(function() {
+        $("#introduction")
+            .css('background-image', 'url("/images/designedpropic'+ pageNo + '.png"')
+            .fadeOut();
+        pageNo -= 1;
+        setTimeout(function() {
             $(".intro" + pageNo)
                 .fadeIn()
                 .css('display', 'flex')
@@ -63,26 +65,25 @@ $(document).ready(function() {
             $("#page1btn, #page2btn")
                 .fadeIn()
                 .css('cursor', 'not-allowed');
-            $("#bg")
-                .attr("src", "images/designedpropic"+ pageNo +".png")
+            $("#introduction")
+                .css('background-image', 'url("/images/designedpropic'+ pageNo + '.png"')
                 .fadeIn();
             countPage();
         }, 1000);
-        $(".intro" + (pageNo + 2)).css('transform', 'translateX(20px)') 
+        $(".intro" + (pageNo + 2)).css('transform', 'translateX(20px)'); 
     });
-
-
+    
     $("#page2btn").click(function() {
+        $(this).prop('disabled', true);
         $("#page1btn, #page2btn").fadeOut();
         $(".intro" + pageNo)
             .css('transform', 'translateX(20px)')
             .fadeOut();
-        $("#bg")
-            .attr("src", "images/designedpropic"+ pageNo +".png")
+        $("#introduction")
+            .css('background-image', 'url("/images/designedpropic'+ pageNo + '.png"')
             .fadeOut();
-        $(this).prop('disabled',true);
-         pageNo += 1;
-         setTimeout(function() {
+        pageNo += 1;
+        setTimeout(function() {
             $(".intro" + pageNo)
                 .fadeIn()
                 .css('display', 'flex')
@@ -90,13 +91,14 @@ $(document).ready(function() {
             $("#page1btn, #page2btn")
                 .fadeIn()
                 .css('cursor', 'not-allowed');
-            $("#bg")
-                .attr("src", "images/designedpropic"+ pageNo +".png")
+            $("#introduction")
+                .css('background-image', 'url("/images/designedpropic'+ pageNo + '.png"')
                 .fadeIn();
             countPage();
         }, 800);
-        $(".intro" + (pageNo - 2)).css('transform', 'translateX(-20px)')
+        $(".intro" + (pageNo - 2)).css('transform', 'translateX(-20px)');
     });
+    
   });
 
   
@@ -104,7 +106,7 @@ $(document).ready(function() {
     var scroll = $(window).scrollTop();
     var contentHeight = $('#projects').height();
     var popupHeight = $('#front-end-skill').height();
-    var triggerPoint = contentHeight - popupHeight - 400;
+    var triggerPoint = contentHeight - popupHeight - 300;
   
     if (scroll > triggerPoint && $(window).width() > 450) {
         $("#front-end-skill, #back-end-skill, #other-skill").slideDown().fadeIn();
