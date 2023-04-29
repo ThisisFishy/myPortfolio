@@ -209,6 +209,10 @@ li > a {
   color:transparent;
 }
 
+#welcome-section{
+  display:none;
+}
+
 .auto-typed{
   min-height: 90px;
   white-space: nowrap;

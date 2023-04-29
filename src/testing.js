@@ -32,6 +32,21 @@ $(window).on('beforeunload', function() {
   });
 
 $(document).ready(function() {
+    if ($("#welcome-section").css("display") === "none") {
+        countPage();
+        $(".hifish, .enter, .auto-type").fadeOut(function() {
+            $("#navbar").fadeIn(function(){
+                $('#introduction')
+                    .css('display', 'flex')
+                    .css('width', '0')
+                    .animate({width: '100%'}, 1000)
+                    .fadeIn();
+                $(" #projects, #contacts, #myInfo").fadeIn();
+                $("#contacts").css("display", "flex");
+                
+            })
+        })
+    }
     $("#welcome-section").click(function() {
         console.log("here");
         countPage();
