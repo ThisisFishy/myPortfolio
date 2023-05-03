@@ -1,9 +1,3 @@
-:root {
-  --color1: #000000;
-  --color2: #ffffff;
-  --color3: #808080;
-}
-
 *{
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
@@ -17,11 +11,6 @@ body{
   background: linear-gradient(180deg, rgba(28, 24, 24, 0.8) 0%, rgba(16, 15, 15, 0.9) 50%, rgba(28, 24, 24, 0.8) 100%);
 }
 
-html{
-  min-height: 600px;
-}
-
-
 #navbar {
   position: fixed;
   justify-content: space-between;
@@ -34,7 +23,6 @@ html{
 }
 
 #navbar ul {
-  display: flex;
   list-style: none;
 }
 
@@ -82,63 +70,60 @@ li > a {
 
 /* -----------------HiFish symbol Start------------------ */
 
-.hifish{
+#hifish{
   width:300px;
   height:200px;
   margin:auto;
 }
-.hifish *{
+
+#hifish *{
   position:relative;
 }
 
-.hifish1, .hifish2, .hifish3, .hifish4, .hifish5, .hifish7, .hifish8{
+#hifish1, #hifish2, #hifish3, #hifish4, #hifish5, #hifish7, #hifish8{
   width:12px;
   height:70px;
   background:rgba(255, 255, 255, 0.975);
   border-radius:8px;
+  transition: transform 0.3s ease-in-out;
 }
 
-.hifish1{
+#hifish1{
   margin:0;
   left:60px;
   top:22px;
   transform: rotate(53deg);
-  transition: transform 0.3s ease-in-out;
 }
 
-.hifish2{
+#hifish2{
   margin:0;
   left:60px;
   top:1px;
   transform: rotate(-53deg);
-  transition: transform 0.3s ease-in-out;
 }
 
-.hifish3{
+#hifish3{
   margin:0;
   left:122px;
   bottom:119px;
   transform: rotate(-53deg);
-  transition: transform 0.3s ease-in-out;
 }
 
-.hifish4{
+#hifish4{
   margin:0;
   left:188px;
   bottom:182px;
   transform: rotate(70deg);
-  transition: transform 0.3s ease-in-out;
 }
 
-.hifish5{
+#hifish5{
   margin:0;
   left:121px;
   bottom:209px;
   transform: rotate(53deg);
-  transition: transform 0.3s ease-in-out;
 }
 
-.hifish6{
+#hifish6{
   width:17px;
   height:17px;
   border:0;
@@ -150,56 +135,53 @@ li > a {
   transition: transform 0.3s ease-in-out;
 }
 
-.hifish7{
+#hifish7{
   margin:0;
   left:188px;
   bottom:310px;
   transform: rotate(-70deg);
-  transition: transform 0.3s ease-in-out;
 }
 
-.hifish8{
+#hifish8{
   margin:0;
   left:230px;
   bottom:398px;
-  transition: transform 0.3s ease-in-out;
 }
 
-.hifish:hover .hifish1 {
+#hifish:hover #hifish1 {
   transform: rotate(0deg) translateX(-10px) translateY(-10px); 
 }
 
-.hifish:hover .hifish2 {
+#hifish:hover #hifish2 {
   transform: rotate(0deg) translateX(-10px) translateY(10px); 
 }
 
-.hifish:hover .hifish3 {
+#hifish:hover #hifish3 {
   transform: rotate(90deg) translateX(25px) translateY(30px); 
 }
 
-.hifish:hover .hifish4 {
+#hifish:hover #hifish4 {
   transform: rotate(0deg) translateX(-54px) translateY(-16px); 
 }
 
-.hifish:hover .hifish5 {
+#hifish:hover #hifish5 {
   transform: rotate(0deg) translateX(13px) translateY(10px); 
 }
 
-.hifish:hover .hifish6 {
+#hifish:hover #hifish6 {
   transform: rotate(0deg) translateX(110px) translateY(-20px); 
 }
 
-.hifish:hover .hifish7 {
+#hifish:hover #hifish7 {
   transform: rotate(0deg) translateX(-5px) translateY(15px); 
 }
 
-.hifish:hover .hifish8 {
+#hifish:hover #hifish8 {
   transform: rotate(180deg) translateX(47px) translateY(-33px); 
 }
 
 #bg_curve{
   width:fit-content;
-  /* height: fit-content; */
   z-index: -1;
 
 }
@@ -261,8 +243,6 @@ li > a {
 #introduction > #bg{
   position: absolute;
   z-index:-2;
-  /* width: 95%; */
-  /* height: 100%; */
   overflow:hidden;
 }
 
@@ -277,13 +257,13 @@ li > a {
 }
 
 #download-button {
-  /* margin-top: 10px; */
   white-space: nowrap;
   padding: 10px 20px;
   background-color: white;
   color: black;
   text-decoration: none;
   font-size: 16px;
+  font-weight:bolder;
   cursor: pointer;
   border-radius: 4px;
 }
@@ -293,7 +273,6 @@ li > a {
 }
 
 #pic1, #pic2, #pic3{
-  /* display: flex; */
   width: 350px;
   height: 450px;
   border-radius: 10%;
@@ -301,48 +280,32 @@ li > a {
   margin-top: 100px;
   margin-left:50px;
   overflow:hidden;
+  transition: transform 0.5s ease-out;
+}
+
+.intro1, .intro2, .intro3{
+  justify-content: start;
+  align-items:start;
+  overflow:hidden;
+  transition: transform 0.5s ease-out;
 }
 
 .intro1{
   padding-right: 580px;
   padding-left:10px;
   display: flex;
-  justify-content: start;
-  align-items:start;
-  overflow:hidden;
-  transition: transform 0.5s ease-out;
-  
 }
 
 .intro2{
   padding-right: 470px;
   display: none;
-  justify-content: start;
-  align-items:start;
-  overflow:hidden;
-  transition: transform 0.5s ease-out;
 }
 
 .intro3{
   display: none;
-  justify-content: start;
-  align-items:start;
-  overflow:hidden;
-  transition: transform 0.5s ease-out;
 }
 
-#pic1{
-  transition: transform 0.5s ease-out;
-}
 
-#pic2{
-  transition: transform 0.5s ease-out;
-  /* display:none; */
-}
-#pic3{
-  transition: transform 0.5s ease-out;
-  /* display:none; */
-}
 
 #intro_text1{
   width:500px;
@@ -364,14 +327,13 @@ li > a {
   white-space:normal;
   display: block;
   width:600px;
-  color: #b9b9b9;
+  color: #e9e9e9;
   align-items: center; 
   justify-content: center;
   font-size:15px;
   margin-top: 10px;
   margin-right: 200px;
   left:10px;
-  /* display:none; */
 }
 
 #intro2organise{
@@ -396,7 +358,6 @@ li > a {
   width:500px;
   white-space: nowrap;
   color: rgb(144, 144, 144);
-  /* background-color: yellow; */
   margin-right: 800px;
   display: flex; 
   align-items: center;
@@ -485,9 +446,7 @@ li > a {
 #projectBlock1 {
   margin-top:150px;
   width:100%;
-  /* max-width: 100vh; */
   height:450px;
-  /* background-color: rgb(10, 10, 10); */
   color: whitesmoke;
   position: relative;
 }
@@ -496,7 +455,6 @@ li > a {
   margin-top:200px;
   width:100%;
   height:450px;
-  /* background-color: blue; */
   color: whitesmoke;
   position: relative;
 }
@@ -508,7 +466,6 @@ li > a {
 #skillsTitle , #projectTitle{
   justify-content: center;
   align-items: center;
-  /* display:block; */
   text-align: center;
   margin-bottom:15px;
   padding-top: 15px;
@@ -656,7 +613,6 @@ li > a {
 .layer{
   position:absolute;
   width:100%;
-  /* height:100%; */
   left:0;
   bottom:-100%;
   overflow: hidden;
@@ -700,8 +656,6 @@ li > a {
 .projectDetail > p{
   margin-left:10px;
   font-size:15px;
-  /* background-color: blue; */
-
 }
 
 .projectDetail > p > i{
@@ -750,7 +704,6 @@ li > a {
     height:auto;
     width:100%;
     max-width:450px;
-    /* min-width:400px; */
     padding:0;
     margin: 0;
   }
@@ -807,7 +760,6 @@ li > a {
   #textandbutton{
     padding-top:100px;
     width:400px;
-    /* background-color:blue; */
   }
 
   #textandbutton > h{
@@ -860,7 +812,6 @@ li > a {
 
   .skillGroup{
     margin-top: 20px;
-    /* margin-left:10px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -939,7 +890,6 @@ li > a {
 
   .projectDetail{
     margin-top:60px;
-    /* margin-left:120px; */
   }
 
   #contacts{
