@@ -8,7 +8,7 @@ body{
   margin: auto;
   padding-left: 0;
   padding-right: 0;
-  background: linear-gradient(180deg, rgba(28, 24, 24, 0.8) 0%, rgba(16, 15, 15, 0.9) 50%, rgba(28, 24, 24, 0.8) 100%);
+  background: rgba(10, 10, 10, 0.977);
 }
 
 #navbar {
@@ -17,28 +17,21 @@ body{
   align-items: center;
   top: 0;
   width: 100%; 
-  background-color: #302020;
+  background-color: rgb(32, 26, 26);
   z-index:3;
   display:none;
 }
 
-#navbar ul {
-  list-style: none;
-}
 
-#navbar .logo {
-  margin-right: auto;
+#logo {
+  margin-left:20px;
   width: 100px; 
   height:50px;
 }
 
-#navbar li {
-  margin-left: 20px;
-}
-
-nav > ul {
+#navbar > ul {
   display: flex;
-  justify-content: right;
+  list-style: none;
   flex-wrap: wrap;
   align-items: center;
   padding-inline-start: 0;
@@ -48,12 +41,10 @@ nav > ul {
   margin-right:5%;
 }
 
-nav > ul > li {
+#navbar > ul > li {
   color: #dfdfe2;
-  margin: 0 0.2rem;
-  padding: 0.7rem;
   display: block;
-  margin:8px;
+  margin:22px;
 }
 
 nav > ul > li:hover {
@@ -61,7 +52,7 @@ nav > ul > li:hover {
   opacity: 0.65;
 }
 
-li > a {
+#navbar > ul > li > a {
   color: inherit;
   text-decoration: none;
 }
@@ -195,6 +186,28 @@ li > a {
   display:none;
 }
 
+/* -----------------Welcome button End------------------ */
+/* -----------------intro start------------------ */
+#hiddenwall{
+  width:100%;
+  height:100%;
+}
+
+#introduction{
+  width:100%;
+  height:100%;
+  border-radius: 0 0 20px 20px;
+  Display:none;
+  justify-content: center;
+  align-items: center;
+  overflow:hidden;
+  background-image: url("/images/designedpropic1.png");
+  background-size:cover;
+  background-position: center;
+  transition: transform 0.5s ease-out;
+
+}
+
 .auto-typed{
   min-height: 90px;
   white-space: nowrap;
@@ -207,30 +220,6 @@ li > a {
   z-index: 1;
 }
 
-.enter:hover {
-	opacity: 0.65;
-}
-
-/* -----------------Welcome button End------------------ */
-/* -----------------intro start------------------ */
-#hiddenwall{
-  width:100%;
-  height:100%;
-}
-
-#introduction{
-  width:100%;
-  height:100%;
-  border-radius: 20px;
-  Display:none;
-  justify-content: center;
-  align-items: center;
-  overflow:hidden;
-  background-image: url("/images/designedpropic1.png");
-  background-size:cover;
-  background-position: center;
-}
-
 #textandbutton{
   padding-bottom: 40px;
 }
@@ -240,27 +229,15 @@ li > a {
   color:rgb(144, 144, 144);
 }
 
-#introduction > #bg{
-  position: absolute;
-  z-index:-2;
-  overflow:hidden;
-}
-
 #bgformobile, #mobileIntroOrganise{
   display:none;
-}
-
-#CV_btn{
-  width:fit-content;
-  height:fit-content;
-  white-space: nowrap;
 }
 
 #download-button {
   white-space: nowrap;
   padding: 10px 20px;
   background-color: white;
-  color: black;
+  color: rgb(8, 8, 8);
   text-decoration: none;
   font-size: 16px;
   font-weight:bolder;
@@ -283,25 +260,25 @@ li > a {
   transition: transform 0.5s ease-out;
 }
 
-.intro1, .intro2, .intro3{
+#intro1, #intro2, #intro3{
   justify-content: start;
   align-items:start;
   overflow:hidden;
   transition: transform 0.5s ease-out;
 }
 
-.intro1{
+#intro1{
   padding-right: 580px;
   padding-left:10px;
   display: flex;
 }
 
-.intro2{
+#intro2{
   padding-right: 470px;
   display: none;
 }
 
-.intro3{
+#intro3{
   display: none;
 }
 
@@ -418,21 +395,21 @@ li > a {
   opacity: 0.65;
 }
 
-.arrowleft {
+#arrowleft {
   width: 0;
   height: 0;
   border-top: 11px solid transparent;
   border-bottom: 11px solid transparent;
-  border-left: 11px solid black;
+  border-left: 11px solid rgb(8, 8, 8);
   transform: scaleX(-1); /* to mirror it */  
 }
 
-.arrowright {
+#arrowright {
   width: 0;
   height: 0;
   border-top: 11px solid transparent;
   border-bottom: 11px solid transparent;
-  border-left: 11px solid black;
+  border-left: 11px solid rgb(8, 8, 8);
 }
 
 /* -----------------intro End------------------ */
@@ -649,9 +626,11 @@ li > a {
   overflow:hidden;
   width:220px;
   height:290px;
-  background-color: black;
+  background-color: rgb(8, 8, 8);
   border-radius: 10px;
+  transition: transform 1s ease-out;
 }
+
 
 .projectDetail > p{
   margin-left:10px;
@@ -680,7 +659,7 @@ li > a {
   background-color: transparent;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: rgb(8, 8, 8);
 }
 
 #myInfo{
@@ -700,6 +679,7 @@ li > a {
 /* -----------------contacts end------------------ */
 /* -----------------responsive design start------------------ */
 @media only screen and (max-width: 450px) {
+
   body{
     height:auto;
     width:100%;
@@ -713,17 +693,18 @@ li > a {
   }
 
   #navbar{
+    justify-content: center;
     display:flex;
-    justify-content:center;
-    align-items: center;
   }
 
   #navbar > ul > li{
     display: none;
   }
 
-  #navbar > ul > img{
-    margin:5px;
+
+  #navbar > div {
+    margin-top:7px;
+    padding-left:30px;
   }
 
   #introduction{
@@ -739,14 +720,14 @@ li > a {
     padding-bottom:0px;
   }
 
-  #bg, #page1btn, #page2btn, .intro1, .intro2, .intro3{
+  #bg, #page1btn, #page2btn, #intro1, #intro2, #intro3{
     display:none;
   }
 
   #mobileIntroOrganise{
     display: flex;
     width:100%;
-    margin-left:15px;
+    margin-left:25px;
   }
 
   #bgformobile{
@@ -798,7 +779,7 @@ li > a {
     font-size:11px;
   }
 
-  .intro2, .intro3{
+  #intro2, #intro3{
     display:none;
   }
 
@@ -889,13 +870,14 @@ li > a {
   }
 
   .projectDetail{
-    margin-top:60px;
+    margin-top:30px;
+    margin-bottom: 10px;
   }
 
   #contacts{
     display:flex;
     margin-top:350px;
-    background-color: rgba(0, 0, 0, 0.818);
+    background-color: rgba(12, 11, 11, 0.818);
     justify-content: center;
     
   }
@@ -911,4 +893,62 @@ li > a {
     justify-content: center;
   }
 
+}
+
+@media only screen and (min-width: 450px) {
+
+  #navbar {
+    display:flex;
+  }
+  
+  #logo {
+    margin-left:30px; 
+    width: 100px; 
+    height:50px;
+  }
+  
+  #navbar > ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:flex-end;
+    padding-inline-start: 0;
+    padding-left: 30px;
+    margin-block: 0;
+    height: 100%;
+    margin-right:5%;
+  }
+  
+  #navbar > ul > li {
+    color: #dfdfe2;
+    display: block;
+    margin:22px;
+  }
+  
+  nav > ul > li:hover {
+    cursor: pointer;
+    opacity: 0.65;
+  }
+  
+  #navbar > ul > li > a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  #navbar > ul > li{
+    display: flex;
+    justify-content: end;
+  }
+
+  #projects{
+    display:block;
+  }
+  #contacts{
+    display:block;
+  }
+
+  #myinfo{
+    display:flex;
+  }
 }

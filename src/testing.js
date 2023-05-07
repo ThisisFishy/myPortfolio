@@ -29,24 +29,38 @@ const countPage = () =>{
 
 $(window).on('beforeunload', function() {
     $('html, body').scrollTop(0);
-  });
-
+});
+  
 $(document).ready(function() {
     if ($("#welcome-section").css("display") === "none") {
         countPage();
         $(".hifish, .enter, .auto-type").fadeOut(function() {
             $("#navbar").fadeIn(function(){
-                $('#introduction')
-                    .css('display', 'flex')
-                    .css('width', '0')
-                    .animate({width: '100%'}, 1000)
-                    .fadeIn();
                 $(" #projects, #contacts, #myInfo").fadeIn();
                 $("#contacts").css("display", "flex");
                 
             })
+            $('#introduction')
+                .css({
+                    display: "flex",
+                    opacity: 0
+                })
+                .animate({
+                    opacity: 1
+                }, 1000)
+                .css('transform', 'translateY(-31px)')
         })
     }
+
+    if($(window).width() < 450){
+        $("#introduction, #projects, #contacts").fadeOut(0);
+        $("#project1").fadeOut()
+        .css('transform', 'translateX(-200px)')
+
+        $("#project2").fadeOut()
+        .css('transform', 'translateX(200px)')
+    }
+
     $("#welcome-section").click(function() {
         console.log("here");
         countPage();
@@ -67,13 +81,13 @@ $(document).ready(function() {
     $("#page1btn").click(function() {
         $(this).prop('disabled', true);
         $("#page1btn, #page2btn").fadeOut();
-        $(".intro" + pageNo).css('transform', 'translateX(-20px)').fadeOut();
+        $("#intro" + pageNo).css('transform', 'translateX(-10px)').fadeOut();
         $("#introduction")
             .css('background-image', 'url("/images/designedpropic'+ pageNo + '.png"')
             .fadeOut();
         pageNo -= 1;
         setTimeout(function() {
-            $(".intro" + pageNo)
+            $("#intro" + pageNo)
                 .fadeIn()
                 .css('display', 'flex')
                 .show();
@@ -85,21 +99,21 @@ $(document).ready(function() {
                 .fadeIn();
             countPage();
         }, 1000);
-        $(".intro" + (pageNo + 2)).css('transform', 'translateX(20px)'); 
+        $("#intro" + (pageNo + 2)).css('transform', 'translateX(10px)'); 
     });
     
     $("#page2btn").click(function() {
         $(this).prop('disabled', true);
         $("#page1btn, #page2btn").fadeOut();
-        $(".intro" + pageNo)
-            .css('transform', 'translateX(20px)')
+        $("#intro" + pageNo)
+            .css('transform', 'translateX(10px)')
             .fadeOut();
         $("#introduction")
             .css('background-image', 'url("/images/designedpropic'+ pageNo + '.png"')
             .fadeOut();
         pageNo += 1;
         setTimeout(function() {
-            $(".intro" + pageNo)
+            $("#intro" + pageNo)
                 .fadeIn()
                 .css('display', 'flex')
                 .show();
@@ -111,34 +125,42 @@ $(document).ready(function() {
                 .fadeIn();
             countPage();
         }, 800);
-        $(".intro" + (pageNo - 2)).css('transform', 'translateX(-20px)');
+        $("#intro" + (pageNo - 2)).css('transform', 'translateX(-10px)');
     });
     
-  });
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        var contentHeight = $('#projects').height();
+        var popupHeight = $('#front-end-skill').height();
+        var triggerPoint = contentHeight - popupHeight - 300;
+        if (scroll > triggerPoint && $(window).width() > 450) {
+            $("#front-end-skill, #back-end-skill, #other-skill").slideDown().fadeIn();
+        }
 
-  
-  $(window).scroll(function() {
-    var scroll = $(window).scrollTop();
-    var contentHeight = $('#projects').height();
-    var popupHeight = $('#front-end-skill').height();
-    var triggerPoint = contentHeight - popupHeight - 300;
-  
-    if (scroll > triggerPoint && $(window).width() > 450) {
-        $("#front-end-skill, #back-end-skill, #other-skill").slideDown().fadeIn();
-    }
+        if (scroll > 400 && $(window).width() < 450) {
+            $("#front-end-skill").slideDown().fadeIn();
+        }
 
-    if (scroll > 200 && $(window).width() < 500) {
-        $("#front-end-skill").slideDown().fadeIn();
-    }
+        if (scroll > 700 && $(window).width() < 450) {
+            $("#back-end-skill").slideDown().fadeIn();
+        }
 
-    if (scroll > 500 && $(window).width() < 500) {
-        $("#back-end-skill").slideDown().fadeIn();
-    }
+        if (scroll > 950 && $(window).width() < 450) {
+            $("#other-skill").slideDown().fadeIn();
+        }
 
-    if (scroll > 750 && $(window).width() < 500) {
-        $("#other-skill").slideDown().fadeIn();
-    }
-  });
+        if(scroll > 1100 && $(window).width() < 450){
+            $("#project1")
+            .fadeIn(1500)
+            .css('transform', 'translateX(0px)');
+        }
+
+        if(scroll > 1500 && $(window).width() < 450){
+            $("#project2")
+            .fadeIn(1500)
+            .css('transform', 'translateX(0px)');
+        }
+    });
   
 
 
@@ -165,4 +187,6 @@ $(document).ready(function() {
     } else {
         $("#other-skill").slideDown().fadeIn();
     }    
-  })
+  });
+
+});

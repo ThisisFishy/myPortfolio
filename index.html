@@ -7,6 +7,10 @@
     <title>Profolio</title>
     <link rel="stylesheet" href="src\fishy.css"/>
     <link rel="icon" href="images\fishwebLogo.png">
+    <link rel="preload" as="image" href="images\designedpropic1.png">
+    <link rel="preload" as="image" href="images\designedpropic2.png">
+    <link rel="preload" as="image" href="images\designedpropic3.png">
+    <link rel="preload" as="image" href="images\exmaple.jpg">
     <script src="https://kit.fontawesome.com/e964fb6eb2.js" crossorigin="anonymous"></script>
   </head>
 
@@ -14,8 +18,10 @@
 
     <header id="header">
        <nav id="navbar"> 
+        <div>
+          <img src="images\fishLogo.png" id="logo">
+        </div>
         <ul>
-          <img src="images\fishLogo.png" class="logo">
           <li><a href="#introduction" >Home</a></li>
           <li><a href="#projects">Skills</a></li>
           <li><a href="#projectBlock2">Projects</a></li>
@@ -47,26 +53,26 @@
             </div>
           </div>
           <button id="page1btn" type="button">
-              <span class="arrowleft"></span>
+              <span id="arrowleft"></span>
           </button>
-          <div class="intro1">
+          <div id="intro1">
             <div id="textandbutton">
               <h id="intro_text1">I am&nbsp;<span class="auto-typed"></span> </h> 
               <p>A motivated self-taught front-end developer </p>
               <a href="images\ThomasYu's_Resume.pdf" download id="download-button">Download My CV</a>
             </div>
           </div>
-          <div class="intro2">
+          <div id="intro2">
             <div id="intro2organise">
               <h id="intro_text2header">About Myself</h>
               <p id="intro_text2">Being an engineer was not always my goal. However, after discovering the beauty of front-end engineering, I have been passionate about it ever since. I have developed the necessary skills through online code camps and self-learning, and I am committed to continuous improvement. I even traveled to Thailand to take photos for my personal website!</p>
             </div>
-            </div>
-          <div class="intro3">
+          </div>
+          <div id="intro3">
             <h id="intro_text3">This is my Dog BB</h>
           </div>
           <button id="page2btn" type="button">
-            <span class="arrowright"></span>
+            <span id="arrowright"></span>
           </button>
       </section>
     </section>
@@ -93,7 +99,7 @@
             <button type="button" class="skillType" id="back-end" disabled> Back-End <i class="fa-sharp fa-solid fa-code logo"></i></button>
             <ul id="back-end-skill" class="skillBar">
               <li>JavaScript <i class="fa-brands fa-square-js"></i></li>
-              <li>MySQL <img src="images\MySQL-logo.png" id="MySQL-logo" /></li>
+              <li>MySQL <img src="images\MySQL-logo.png" id="MySQL-logo"/></li>
               <li>TypeJS <i class="fa-brands fa-js"></i></li>
               <li>C++ <img src="images\CppLogo.png" id="cppLogo"></li>
             </ul>
@@ -116,7 +122,7 @@
           <h class="project-title heading-with-lines" id="projectTitle"><span>Projects</span></h>
         </div>
         <div id="block2BoxOrganise">
-          <div class="projectDetail">
+          <div class="projectDetail" id="project1">
             <img src="images\exmaple.jpg" id="projectImg1"/>
             <div class="layer">
               <a href="https://github.com/ThisisFishy/myPortfolio" target="_blank"><i class="fa-brands fa-github"  ></i></a>
@@ -126,7 +132,7 @@
             <a class="projectName">Personal Website</a>
             <p>Skill used: <i class="fa-brands fa-html5 logo"></i> <i class="fa-brands fa-css3-alt"></i> <img src="images\jqueryLogo.png" id="jquery-logo2" /></p>
           </div>
-          <div class="projectDetail">
+          <div class="projectDetail" id="project2">
             <img src="images\exmaple.jpg" id="projectImg2"/>
             <div class="layer">
               <a href="https://github.com/ThisisFishy/CRUD" target="_blank"><i class="fa-brands fa-github logoFlex"></i></a>
