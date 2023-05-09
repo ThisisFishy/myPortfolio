@@ -334,7 +334,7 @@ nav > ul > li:hover {
 #intro_text3{
   width:500px;
   white-space: nowrap;
-  color: rgb(144, 144, 144);
+  color: #e9e9e9;
   margin-right: 800px;
   display: flex; 
   align-items: center;
@@ -348,19 +348,19 @@ nav > ul > li:hover {
 }
 
 
-#page1btn, #page2btn, #page3btn {
+#page1btn, #page2btn{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #333;
+  background-color: #181616;
   border: none;
   cursor: pointer;
   overflow: hidden;
-  z-index:1;
-} 
+  z-index:3;
+}
 
 #page1btn{
   margin-right: 20px;
@@ -371,33 +371,29 @@ nav > ul > li:hover {
 }
 
 #page1btn:disabled {
-  opacity: 1;
+  opacity: 0;
   cursor: pointer;
 }
 
 #page2btn:disabled {
-  opacity: 1;
+  opacity: 0;
   cursor: pointer;
 }
 
 #page1btn:hover{
-  background-color: whitesmoke;
+  background-color: rgb(84, 84, 84);
   opacity: 0.65;
 }
 
 #page2btn:hover{
-  background-color: whitesmoke;
-  opacity: 0.65;
-}
-
-#page3btn:hover{
-  background-color: whitesmoke;
+  background-color: rgb(84, 84, 84);
   opacity: 0.65;
 }
 
 #arrowleft {
   width: 0;
   height: 0;
+  margin-right:5px;
   border-top: 11px solid transparent;
   border-bottom: 11px solid transparent;
   border-left: 11px solid rgb(8, 8, 8);
@@ -854,6 +850,10 @@ nav > ul > li:hover {
     padding-top: 15px;
     font-size:50px;
     font-weight:700;
+  }
+
+  .skillType{
+    font-size:xx-large;
   }
 
   #block1BoxOrganise, #block2BoxOrganise{
