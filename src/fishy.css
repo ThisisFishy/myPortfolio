@@ -897,6 +897,7 @@ nav > ul > li:hover {
   .projectDetail{
     margin-top:30px;
     margin-bottom: 10px;
+    width:350px;
   }
 
   #contacts{
