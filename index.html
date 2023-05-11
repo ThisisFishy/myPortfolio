@@ -23,10 +23,23 @@
           <img src="images\fishLogo.png" id="logo">
         </div>
         <ul>
-          <li><a href="#introduction" >Home</a></li>
-          <li><a href="#projects">Skills</a></li>
-          <li><a href="#projectBlock2">Projects</a></li>
-          <li><a href="#contacts">Contacts</a></li>
+          <li><a href="#introduction" >Home <i class="fa-solid fa-house"></i></a></li>
+          <li><a href="#projects">Skills <i class="fa-solid fa-wrench"></i></a></li>
+          <li><a href="#projectBlock2">Projects <i class="fa-solid fa-scroll"></i></a></li>
+          <li><a href="#contacts">Contacts <i class="fa-solid fa-address-book"></i></a></li>
+          <div class="container">
+            <input type="checkbox" id="toggleCatalog" class="toggle-checkbox">
+            <label for="toggleCatalog" class="icon" id="catalogIcon"><i class="fa-solid fa-bars" style="color: #dfdfe2;"></i> </label>
+            <div id="catalog" class="popup">
+              <!-- Catalog content goes here -->
+              <h3>Catalog</h3>
+              <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ul>
+            </div>
+          </div>            
         </ul>
       </nav>
     </header>
