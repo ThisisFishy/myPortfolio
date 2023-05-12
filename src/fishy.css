@@ -302,7 +302,7 @@ nav > ul > li:hover {
 #intro_text1{
   width:500px;
   white-space: nowrap;
-  color: rgb(144, 144, 144);
+  color:whitesmoke;
   display: flex; 
   align-items: center; 
   justify-content:left;
@@ -751,7 +751,7 @@ nav > ul > li:hover {
   #catalog {
     display: flex;
     position: absolute;
-    top: 59px;
+    top: 58px;
     right:-400px;
     width: 300px;
     height: 800px;
