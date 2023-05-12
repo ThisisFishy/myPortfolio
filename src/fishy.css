@@ -751,12 +751,12 @@ nav > ul > li:hover {
   #catalog {
     display: flex;
     position: absolute;
-    top: 60px;
+    top: 59px;
     right:-400px;
     width: 300px;
     height: 800px;
     padding-top: 100px;
-    border: 1px solid #000000;
+    border:#000000;
     transition: right 0.3s ease-in-out;
   }
   
