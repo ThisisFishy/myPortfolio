@@ -242,6 +242,10 @@ nav > ul > li:hover {
   display:none;
 }
 
+.container{
+  display:none;
+}
+
 #download-button {
   white-space: nowrap;
   padding: 10px 20px;
@@ -726,10 +730,10 @@ nav > ul > li:hover {
     display: none;
   }
 
+
   .container {
+    display:flex;
     position: relative;
-    /* width: 200px; */
-    /* height: 200px; */
   }
   
   .icon {
@@ -744,24 +748,40 @@ nav > ul > li:hover {
     left:55px;
   }
   
-  .popup {
-    display: none;
+  #catalog {
+    display: flex;
     position: absolute;
     top: 60px;
-    left: 0;
-    width: 200px;
-    padding: 10px;
-    background-color: blue;
-    border: 1px solid #ccc;
+    right:-400px;
+    width: 300px;
+    height: 800px;
+    padding-top: 100px;
+    border: 1px solid #000000;
+    transition: right 0.3s ease-in-out;
   }
   
+  #catalog > ul >li{
+    list-style: none;
+    padding:20px;
+    padding-top:40px;
+    font-size: 23px;
+    text-shadow: 3px 2px 3px black; 
+
+  }
+
+  #catalog > ul >li > a{
+    text-decoration: none;
+    color:rgb(194, 193, 193);
+  }
+
+
   .toggle-checkbox {
     display: none;
   }
   
   .toggle-checkbox:checked ~ #catalog {
     display: block;
-  background-color:blue;
+    right: -100px;
   }
   
   .icon:hover {
