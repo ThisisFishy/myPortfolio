@@ -1,69 +1,82 @@
 var pageNo = 1;
-var popupVisible = false;
-const countPage = () =>{
-    switch(pageNo){
+
+const updatePageButtons = () => {
+    let display1 = 'flex';
+    let display2 = 'flex';
+
+    switch(pageNo) {
         case 1:
-            console.log("1")
-            $("#page1btn").css('display', 'none')
-            $("#page2btn").css('display', 'flex')
-            $("#page1btn").prop('disabled',false).css('cursor','pointer')
-            $("#page2btn").prop('disabled',false).css('cursor','pointer')
-            break;
-        case 2:
-            console.log("2")
-            $("#page1btn").css('display', 'flex')
-            $("#page2btn").css('display', 'flex')
-            $("#page1btn").prop('disabled',false).css('cursor','pointer')
-            $("#page2btn").prop('disabled',false).css('cursor','pointer')
+            display1 = 'none';
             break;
         case 3:
-            console.log("3")
-            $("#page1btn").css('display', 'flex')
-            $("#page2btn").css('display', 'none')
-            $("#page1btn").prop('disabled',false).css('cursor','pointer')
-            $("#page2btn").prop('disabled',false).css('cursor','pointer')
+            display2 = 'none';
             break;
-        
     }
-}
+
+    console.log(pageNo);
+    $("#page1btn, #page2btn").css('display', display1).prop('disabled',false).css('cursor','pointer');
+    $("#page2btn").css('display', display2);
+};
+
+const animatePage = (pageIncrement, fadeOutDelay, fadeInDelay) => {
+    $("#page1btn, #page2btn").prop('disabled', true).fadeOut();
+    $("#intro" + pageNo).css('transform', 'translateX(' + (-pageIncrement * 10) + 'px)').fadeOut();
+    $("#introduction").css('background-image', 'url("/images/designedpropic' + pageNo + '.png"').fadeOut();
+
+    pageNo += pageIncrement;
+
+    setTimeout(function() {
+      $("#intro" + pageNo).fadeIn().css({
+        'display': 'flex',
+        'cursor': 'not-allowed'
+      });
+      $("#page1btn, #page2btn").fadeIn();
+      $("#introduction").css('background-image', 'url("/images/designedpropic' + pageNo + '.png"').fadeIn();
+      updatePageButtons();
+    }, fadeInDelay);
+
+    $("#intro" + (pageNo - (2 * pageIncrement))).css('transform', 'translateX(' + (pageIncrement * 10) + 'px)');
+};
+
+const toggleSkill = (skill) => {
+    const element = $("#" + skill + "-skill");
+    if (element.is(":visible")) {
+        element.slideUp().fadeOut();
+    } else {
+        element.slideDown().fadeIn();
+    }
+};
 
 $(window).on('beforeunload', function() {
     $('html, body').scrollTop(0);
 });
-  
+
 $(document).ready(function() {
     if ($("#welcome-section").css("display") === "none") {
-        countPage();
+        updatePageButtons();
         $(".hifish, .enter, .auto-type").fadeOut(function() {
             $("#navbar").fadeIn(function(){
                 $(" #projects, #contacts, #myInfo").fadeIn();
                 $("#contacts").css("display", "flex");
                 
-            })
-            $('#introduction')
-                .css({
+            });
+            $('#introduction').css({
                     display: "flex",
                     opacity: 0
-                })
-                .animate({
+                }).animate({
                     opacity: 1
-                }, 1000)
-                .css('transform', 'translateY(-31px)')
-        })
+                }, 1000).css('transform', 'translateY(-31px)');
+        });
     }
 
     if($(window).width() < 450){
         $("#introduction, #projects, #contacts").fadeOut(0);
-        $("#project1").fadeOut()
-        .css('transform', 'translateX(-200px)')
-
-        $("#project2").fadeOut()
-        .css('transform', 'translateX(200px)')
+        $("#project1").fadeOut().css('transform', 'translateX(-200px)');
+        $("#project2").fadeOut().css('transform', 'translateX(200px)');
     }
 
     $("#welcome-section").click(function() {
-        console.log("here");
-        countPage();
+        updatePageButtons();
         $(".hifish, .enter, .auto-type").fadeOut(function() {
             $("#navbar").fadeIn(function(){
                 $('#introduction')
@@ -73,66 +86,24 @@ $(document).ready(function() {
                     .fadeIn();
                 $(" #projects, #contacts, #myInfo").fadeIn();
                 $("#contacts").css("display", "flex");
-                
-            })
-        })
-    })
+            });
+        });
+    });
 
     $("#page1btn").click(function() {
-        $(this).prop('disabled', true);
-        $("#page1btn, #page2btn").fadeOut();
-        $("#intro" + pageNo).css('transform', 'translateX(-10px)').fadeOut();
-        $("#introduction")
-            .css('background-image', 'url("/images/designedpropic'+ pageNo + '.png"')
-            .fadeOut();
-        pageNo -= 1;
-        setTimeout(function() {
-            $("#intro" + pageNo)
-                .fadeIn()
-                .css('display', 'flex')
-                .show();
-            $("#page1btn, #page2btn")
-                .fadeIn()
-                .css('cursor', 'not-allowed');
-            $("#introduction")
-                .css('background-image', 'url("/images/designedpropic'+ pageNo + '.png"')
-                .fadeIn();
-            countPage();
-        }, 1000);
-        $("#intro" + (pageNo + 2)).css('transform', 'translateX(10px)'); 
+        animatePage(-1, 1000, 1000);
     });
-    
+
     $("#page2btn").click(function() {
-        $(this).prop('disabled', true);
-        $("#page1btn, #page2btn").fadeOut();
-        $("#intro" + pageNo)
-            .css('transform', 'translateX(10px)')
-            .fadeOut();
-        $("#introduction")
-            .css('background-image', 'url("/images/designedpropic'+ pageNo + '.png"')
-            .fadeOut();
-        pageNo += 1;
-        setTimeout(function() {
-            $("#intro" + pageNo)
-                .fadeIn()
-                .css('display', 'flex')
-                .show();
-            $("#page1btn, #page2btn")
-                .fadeIn()
-                .css('cursor', 'not-allowed');
-            $("#introduction")
-                .css('background-image', 'url("/images/designedpropic'+ pageNo + '.png"')
-                .fadeIn();
-            countPage();
-        }, 800);
-        $("#intro" + (pageNo - 2)).css('transform', 'translateX(-10px)');
+        animatePage(1, 800, 800);
     });
-    
+
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
         var contentHeight = $('#projects').height();
         var popupHeight = $('#front-end-skill').height();
         var triggerPoint = contentHeight - popupHeight - 300;
+
         if (scroll > triggerPoint && $(window).width() > 450) {
             $("#front-end-skill, #back-end-skill, #other-skill").slideDown().fadeIn();
         }
@@ -150,43 +121,25 @@ $(document).ready(function() {
         }
 
         if(scroll > 1100 && $(window).width() < 450){
-            $("#project1")
-            .fadeIn(1500)
-            .css('transform', 'translateX(0px)');
+            $("#project1").fadeIn(1500).css('transform', 'translateX(0px)');
         }
 
         if(scroll > 1500 && $(window).width() < 450){
-            $("#project2")
-            .fadeIn(1500)
-            .css('transform', 'translateX(0px)');
+            $("#project2").fadeIn(1500).css('transform', 'translateX(0px)');
         }
     });
-  
 
+    $("#front-end").click(function() {
+        toggleSkill("front-end");
+    });
 
-  $("#front-end").click(function() {
-    if ($("#front-end-skill").is(":visible")){
-        $("#front-end-skill").slideUp().fadeOut();
-    } else {
-        $("#front-end-skill").slideDown().fadeIn();
-    }    
-  });
+    $("#back-end").click(function() {
+        toggleSkill("back-end");
+    });
 
-  $("#back-end").click(function() {
-    if ($("#back-end-skill").is(":visible")){
-        $("#back-end-skill").slideUp().fadeOut();
-    } else {
-        $("#back-end-skill").slideDown().fadeIn();
-    }    
-  });
-
-
-  $("#others").click(function() {
-    if ($("#other-skill").is(":visible")){
-        $("#other-skill").slideUp().fadeOut();
-    } else {
-        $("#other-skill").slideDown().fadeIn();
-    }    
-  });
+    $("#others").click(function() {
+        toggleSkill("others");
+    });
 
 });
+
